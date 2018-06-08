@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>添加传感器</title>
+</head>
+<body>
+<div class="contentDiv">
+
+    <h5 align="center">  <strong>添加传感器</strong> </h5>
+
+    <legend>
+        <strong>传感器</strong>
+    </legend>
+
+    <form th:action="@{/sensor/{action}(action=${action})}" method="post" class="form-horizontal">
+
+        <div class="form-group">
+            <label for="sensor.message" class="col-sm-2 control-label">文字信息:</label>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" id="sensor.message" name="name" th:value="${sensor.message}"
+                       th:field="*{sensor.message}"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="sensor.binaryMessage" class="col-sm-2 control-label">报文:</label>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" id="sensor.binaryMessage" name="name" th:value="${sensor.binaryMessage}"
+                       th:field="*{sensor.binaryMessage}"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input class="btn btn-primary" type="submit" value="提交"/>&nbsp;&nbsp;
+                <input class="btn" type="button" value="返回" onclick="history.back()"/>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

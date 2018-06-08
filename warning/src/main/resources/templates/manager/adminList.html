@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>管理员列表</title>
+
+</head>
+
+<body>
+<div class="contentDiv">
+
+    <h3 align="center">  <strong>管理员列表</strong> </h3>
+    <div ><a class="btn btn-danger pull-right" href="/login" role="button">登出系统</a></div>
+    <table class="table table-hover table-condensed">
+        <legend>
+           管理员列表
+        </legend>
+        <thead>
+        <tr>
+            <th>管理员编号</th>
+            <th>角色</th>
+            <th>姓名</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="admin : ${admins}">
+          <!--<th scope="row" th:text="${admin.id}"></th>-->
+            <td><a th:href="@{/getAdminById/{id}(id=${admin.id})}" th:text="${admin.id}"></a></td>
+            <td th:text="${admin.role}"></td>
+            <td th:text="${admin.name}"></td>
+            <td><a class="btn btn-danger" th:href="@{/admin/deleteAdminById/{id}(id=${admin.id})}">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align:center"><a class="btn btn-primary" href="/admin/adminAdd" role="button">新增管理员</a></div>
+
+</div>
+
+</body>
+</html>

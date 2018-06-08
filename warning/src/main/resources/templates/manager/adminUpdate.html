@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>管理员更新列表</title>
+</head>
+<div class="contentDiv">
+
+    <h5 align="center">  <strong>更新</strong> </h5>
+
+    <legend>
+        <strong>管理员</strong>
+    </legend>
+
+    <form th:action="@{/admin/{action}(action=${action})}" method="post" class="form-horizontal">
+
+        <div class="form-group">
+            <label for="admin.role" class="col-sm-2 control-label">角色:</label>
+            <div class="col-xs-4">
+                <input type="number" class="form-control" id="admin.role" name="role" th:value="${admin.role}"
+                       th:field="*{admin.role}"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="admin.name" class="col-sm-2 control-label">姓名:</label>
+            <div class="col-xs-4">
+                <input type="text" class="form-control" id="admin.name" name="name" th:value="${admin.name}"
+                       th:field="*{admin.name}"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <input class="btn btn-primary" type="submit" value="提交"/>&nbsp;&nbsp;
+                <input class="btn" type="button" value="返回" onclick="history.back()"/>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

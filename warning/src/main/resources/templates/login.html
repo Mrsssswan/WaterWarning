@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/signin.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>水灾预警系统</title>
+</head>
+<body>
+<body>
+
+<div class="container">
+
+    <form class="form-signin" action="admin/adminLogin" method="post">
+        <h2 class="form-signin-heading">管理员登录</h2>
+        <label for="inputID" class="sr-only">管理员编号</label>
+        <input type="number" id="inputID" class="form-control" placeholder="ID" name="id" required autofocus>
+        <label for="inputRole" class="sr-only">管理员类型</label>
+        <input type="number" id="inputRole" class="form-control" placeholder="Role" name="role">
+        <label for="inputName" class="sr-only">管理员姓名</label>
+        <input type="text" id="inputName" class="form-control" placeholder="Name" name="name">
+        <label for="inputPassword" class="sr-only">密码</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> 记住我
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">登入系统</button>
+    </form>
+
+</div>
+
+</body>
+</body>
+</html>

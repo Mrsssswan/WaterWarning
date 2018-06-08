@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+<link th:href="@{/css/signin.css}" rel="stylesheet"/>
+<meta charset="UTF-8"/>
+<title>水灾预警系统</title>
+<body>
+<div class="container">
+
+    <form class="form-signin">
+        <h2 class="form-signin-heading">传感器上传数据</h2>
+        <label for="inputID" class="sr-only">传感器编号</label>
+        <input type="text" id="inputID" class="form-control" placeholder="ID" required autofocus>
+        <label for="inputMessage" class="sr-only">报文信息</label>
+        <input type="text" id="inputMessage" class="form-control" placeholder="Message" required autofocus>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">上传数据</button>
+    </form>
+
+</div>
+</body>
+</html>

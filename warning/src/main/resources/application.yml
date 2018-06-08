@@ -1,0 +1,35 @@
+spring:
+#  profiles:
+#    active: prod
+
+#数据库连接配置
+  datasource:
+    url: jdbc:mysql:///water
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+#jpa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+    #使用阿里巴巴的drud数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  #关闭缓存，及时刷新
+  thymeleaf:
+    cache: false
+  #热部署生效
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+
+
+
+
+
+
+
+

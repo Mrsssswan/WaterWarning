@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+    <meta charset="UTF-8"/>
+    <title>传感器列表</title>
+</head>
+
+<body>
+<div class="contentDiv">
+
+    <h5 align="center">  <strong>传感器列表</strong> </h5>
+    <div><a class="btn btn-primary" th:href="@{/admin/updateAdmin/{id}(id=${id})}" role="button">更新个人信息</a></div>
+    <div ><a class="btn btn-danger pull-right" href="/login" role="button">登出系统</a></div>
+    <table class="table table-hover table-condensed">
+        <legend>
+            传感器列表
+        </legend>
+        <thead>
+        <tr>
+            <th>传感器编号</th>
+            <th>文字信息</th>
+            <th>报文</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="sensor : ${sensors}">
+
+            <td><a th:href="@{/getTransducerById/{id}(id=${sensor.id})}" th:text="${sensor.id}"></a></td>
+            <td th:text="${sensor.message}"></td>
+            <td th:text="${sensor.binaryMessage}"></td>
+            <td><a class="btn btn-danger" th:href="@{/deleteTransducer/{id}(id=${sensor.id})}">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div><a class="btn btn-primary" href="/sensor/addTransducer" role="button">新增传感器</a></div>
+</div>
+
+</body>
+</html>
